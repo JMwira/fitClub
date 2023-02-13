@@ -5,7 +5,10 @@ import hero_image from "../../assets/hero_image.png"
 import hero_image_back from "../../assets/hero_image_back.png"
 import heart from "../../assets/heart.png"
 import calories from "../../assets/calories.png"
+import {motion} from 'framer-motion'
 const Hero = () => {
+    const transition = {type:'spring', duration:3}
+
   return (
     <div className='hero' >
         <div className="blur hero-blur "></div>
@@ -13,7 +16,11 @@ const Hero = () => {
         <Header/>
         {/* The best ad */}
         <div className="the-best-ad">
-            <div></div>
+            <motion.div
+                initial={{left:'238px'}}
+                whileInView={{left:'8px'}}
+                transition={{...transition, type:'tween'}}
+            ></motion.div>
             <span>the best fitness club in the town</span>
         </div>
         {/* Hero heading */}
