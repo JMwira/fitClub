@@ -7,7 +7,7 @@ import heart from "../../assets/heart.png"
 import calories from "../../assets/calories.png"
 import {motion} from 'framer-motion'
 const Hero = () => {
-    const transition = {type:'spring', duration:3}
+    const transition = {type:'tween', duration:3}
 
   return (
     <div className='hero' >
@@ -60,21 +60,29 @@ const Hero = () => {
       </div>
       <div className="right-h">
         <button className="btn">Join now</button>
-        <div className="heart-rate">
+        <motion.div className="heart-rate"
+            transition={{...transition}}
+            initial={{right:'-1rem'}}
+            whileInView={{right:'4rem'}}
+        >
             <img src={heart} alt="" />
             <span>Heart rate</span><span>BPM</span>
-        </div>
+        </motion.div>
         {/* hero images */}
         <img src={hero_image} alt="" className='hero-image' srcset="" />
-        <img src={hero_image_back} alt="" className='hero-image-back' srcset="" />
+        <motion.img src={hero_image_back} alt="" className='hero-image-back' srcset="" initial={{right:'11rem'}} whileInView={{right:'20rem'}} transition={transition} />
         {/* calories */}
-        <div className="calories">
+        <motion.div className="calories"
+            initial={{right:'37rem'}}
+            whileInView={{right:'28rem'}}
+            transition={transition}
+        >
             <img src={calories} alt="" />
             <div>
                 <span>Calories burned</span>
                 <span>220Kcal</span>
             </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
