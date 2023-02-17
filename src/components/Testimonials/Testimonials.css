@@ -66,7 +66,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width:768pc){
+@media screen and (max-width:768px){
     .Testimonials{
         flex-direction: column;
         margin-top: 0;
