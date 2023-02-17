@@ -15,7 +15,7 @@ const Plans = () => {
         </div>
 
         {/* plansCard */}
-        <div className="plans">
+        <div className="plans" id='plans'>
             {
                 plansData.map((plandata, i)=>(
                     <div className='plan' key={i}>
